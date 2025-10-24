@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesibilidad App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="center-wrapper">
+        <!-- Barra superior -->
+        <div class="top-bar" role="toolbar" aria-label="Barra superior">
+            <div class="top-bar-content">
+                <div class="left-icons">
+                    <button class="icon-btn" id="dark-mode" aria-label="Modo oscuro" title="Modo oscuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="icon-btn" id="text-size" aria-label="Tamaño de letra" title="Tamaño de letra">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                </div>
+
+                <div class="time" id="clock">00:00</div>
+
+                <div class="right-icons">
+                    <button class="icon-btn" id="lang" aria-label="Idioma" title="Idioma">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="icon-btn" id="sound" aria-label="Sonido" title="Sonido">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla 1: Login -->
+        <div class="screen active" id="screen1">
+            <div class="login-container" role="main" aria-labelledby="titulo">
+                <div class="logo" id="titulo">Accesibilidad</div>
+                <p class="tagline">Movilidad accesible para todos; en silla de ruedas, en bici o a pie.</p>
+                
+                <!-- Contenedor de opciones de movilidad -->
+                <div class="options-container">
+                    <!-- Fila de opciones de transporte -->
+                    <div class="option-row">
+                        <!-- Opción: silla de ruedas -->
+                        <div class="option-card" data-value="wheelchair">
+                            <div class="option-icon">
+                                <i class="fas fa-wheelchair"></i>
+                            </div>
+                            <div class="option-name">Silla de ruedas</div>
+                        </div>
+                        
+                        <!-- Opción: bicicleta -->
+                        <div class="option-card" data-value="bicycle">
+                            <div class="option-icon">
+                                <i class="fas fa-bicycle"></i>
+                            </div>
+                            <div class="option-name">Bicicleta</div>
+                        </div>
+                        
+                        <!-- Opción: peatón -->
+                        <div class="option-card" data-value="pedestrian">
+                            <div class="option-icon">
+                                <i class="fas fa-walking"></i>
+                            </div>
+                            <div class="option-name">Peatón</div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="user">Usuario o correo electrónico</label>
+                        <input id="user" type="text" placeholder="Usuario o correo electrónico">
+                    </div>
+                    <div class="input-group">
+                        <label for="pass">Contraseña</label>
+                        <input id="pass" type="password" placeholder="Contraseña">
+                    </div>
+                    <button class="btn-primary" id="loginBtn">Iniciar sesión</button>
+                    <div class="links">
+                        <a href="3. Silla de ruedas_recuperar-contrasena.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                        <a href="#" id="createAccountBtn">Crear cuenta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla 2: Preferences -->
+        <div class="screen" id="screen2">
+            <a href="#" class="back-btn" id="backBtn">←</a>
+            <h1>¿Cómo te mueves normalmente?</h1>
+            <div class="options-grid">
+                <button class="option-btn">Silla de ruedas</button>
+                <button class="option-btn">Bicicleta</button>
+                <button class="option-btn">Peatón</button>
+            </div>
+            <div class="toggle-group">
+                <label>Alumbrado público
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </label>
+                <label>Rutas iluminadas
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+                <label>Calidad del aire
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+                <label>Alertas y niveles
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </label>
+            </div>
+            <button class="btn-primary" id="saveContinueBtn">Guardar y continuar</button>
+        </div>
+
+        <!-- Pantalla 3: Map -->
+        <div class="screen" id="screen3">
+            <a href="#" class="back-btn" id="backBtnMap">←</a>
+            <h1>Accesibilidad</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="¿A dónde vas?">
+                <button class="btn-icon">🔍</button>
+                <button class="btn-icon">🎙️</button>
+            </div>
+            <div class="map-placeholder">
+                <div class="map-overlay">Mapa</div>
+            </div>
+            <div class="info-panel">
+                <div class="info-item">
+                    <span>41</span>
+                    <p>Ruta accesible</p>
+                </div>
+                <div class="info-item">
+                    <span>32%</span>
+                    <p>Disponibles</p>
+                </div>
+                <div class="info-item">
+                    <span>Buena</span>
+                    <p>Segura</p>
+                </div>
+                <div class="info-item">
+                    <span>Buena</span>
+                    <p>Calidad del aire</p>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-icon">📍</button>
+                <button class="btn-icon">🚧</button>
+                <button class="btn-icon">🌫️</button>
+                <button class="btn-icon">ℹ️</button>
+                <button class="btn-icon">≡</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+ style>
+    /* === ESTILOS BASE === */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(180deg, #0d1b2a, #1b263b);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+    }
+    h1 {
+      margin-bottom: 8px;
+      font-size: 1.8em;
+      color: #90e0ef;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 1em;
+      margin-bottom: 30px;
+      color: #caf0f8;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      outline: none;
+    }
+    input[type="email"],
+    input[type="password"] {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+    input::placeholder { color: #d9d9d9; }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #00b4d8;
+      color: white;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background: #0096c7; }
+
+    a {
+      color: #ade8f4;
+      font-size: 0.9em;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .extra-options {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Botón de crear cuenta */
+    .secondary-btn {
+      margin-top: 20px;
+      display: block;
+      background: transparent;
+      border: 1px solid #00b4d8;
+      color: #00b4d8;
+    }
+    .secondary-btn:hover {
+      background: #00b4d8;
+      color: #fff;
+    }
+  

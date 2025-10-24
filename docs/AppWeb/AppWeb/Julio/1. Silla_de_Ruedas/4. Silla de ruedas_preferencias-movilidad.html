@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencias de Movilidad - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="preferencias-movilidad.css">
+</head>
+<body>
+    <!-- Barra superior con controles de accesibilidad -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <!-- Iconos de la izquierda: modo oscuro y tamaño de texto -->
+            <div class="left-icons">
+                <button class="icon-btn" id="dark-mode-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="icon-btn" id="text-size-btn">
+                    <i class="fas fa-text-height"></i>
+                </button>
+            </div>
+            
+            <!-- Reloj en tiempo real -->
+            <div class="time" id="clock">9:41</div>
+            
+            <!-- Iconos de la derecha: idioma y sonido -->
+            <div class="right-icons">
+                <button class="icon-btn" id="language-btn">
+                    <i class="fas fa-globe"></i>
+                </button>
+                <button class="icon-btn" id="sound-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Contenedor de preferencias -->
+        <div class="preferences-container">
+            <h1 class="title">¿Cómo te mueves normalmente?</h1>
+            
+            <!-- Contenedor de opciones de movilidad -->
+            <div class="options-container">
+                <!-- Fila de opciones de transporte -->
+                <div class="option-row">
+                    <!-- Opción: silla de ruedas -->
+                    <div class="option-card" data-value="wheelchair">
+                        <div class="option-icon">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                        <div class="option-name">Silla de ruedas</div>
+                    </div>
+                    
+                    <!-- Opción: bicicleta -->
+                    <div class="option-card" data-value="bicycle">
+                        <div class="option-icon">
+                            <i class="fas fa-bicycle"></i>
+                        </div>
+                        <div class="option-name">Bicicleta</div>
+                    </div>
+                    
+                    <!-- Opción: peatón -->
+                    <div class="option-card" data-value="pedestrian">
+                        <div class="option-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <div class="option-name">Peatón</div>
+                    </div>
+                </div>
+                
+                <!-- Opción de toggle: alumbrado público -->
+                <div class="toggle-option">
+                    <div class="toggle-content">
+                        <div class="toggle-title">Alumbrado público</div>
+                        <div class="toggle-desc">Rutas Iluminadas</div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="lighting-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <!-- Opción de toggle: calidad del aire -->
+                <div class="toggle-option">
+                    <div class="toggle-content">
+                        <div class="toggle-title">Calidad del aire</div>
+                        <div class="toggle-desc">Alertas y niveles</div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="air-quality-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Botón para guardar preferencias -->
+            <button class="save-button" id="save-preferences-btn">Guardar y continuar</button>
+        </div>
+    </div>
+
+    <script src="preferencias-movilidad.js"></script>
+</body>
+</html>

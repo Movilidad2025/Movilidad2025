@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta Accesible - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="route-summary-styles.css">
+</head>
+<body>
+    <!-- Contenedor principal con separación entre barra y contenido -->
+    <div class="center-wrapper">
+        <!-- Barra superior separada -->
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <div class="left-icons">
+                    <button class="icon-btn" id="dark-mode-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="icon-btn" id="text-size-btn">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                </div>
+                
+                <div class="time">18:22</div>
+                
+                <div class="right-icons">
+                    <button class="icon-btn" id="language-btn">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="icon-btn" id="sound-btn">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div class="route-container">
+            <h1 class="title">Ruta accesible</h1>
+            <p class="subtitle">Resumen del recorrido y disponibilidad de servicios</p>
+            
+            <!-- Mapa representativo -->
+            <div class="map-container">
+                <div class="map-route"></div>
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Vista previa de la ruta accesible</p>
+                </div>
+            </div>
+            
+            <button class="confirm-button">Confirmar ruta</button>
+            
+            <div class="preferences-section">
+                <h2 class="section-title">Preferencias de ruta</h2>
+                
+                <div class="preference-list">
+                    <div class="preference-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <div class="preference-text">
+                            <span class="percentage">65%</span> Cruces peatonales con semáforo
+                        </div>
+                    </div>
+                    
+                    <div class="preference-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-smog"></i>
+                        </div>
+                        <div class="preference-text">
+                            Evitar zonas con alta contaminación
+                        </div>
+                    </div>
+                    
+                    <div class="preference-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <div class="preference-text">
+                            Estaciones de transporte
+                        </div>
+                    </div>
+                    
+                    <div class="preference-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-user-slash"></i>
+                        </div>
+                        <div class="preference-text">
+                            Evitar aglomeraciones y zonas concurridas
+                        </div>
+                    </div>
+                    
+                    <div class="preference-item nested-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="preference-text">
+                            <span class="percentage">78%</span> Alumbrado funcionando
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="route-summary-script.js"></script>
+</body>
+</html>

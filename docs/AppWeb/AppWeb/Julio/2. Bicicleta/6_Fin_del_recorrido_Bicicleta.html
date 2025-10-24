@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta Accesible - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles-fin-recorrido.css">
+</head>
+<body>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="center-wrapper">
+        <!-- BARRA SUPERIOR -->
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <!-- Iconos a la izquierda -->
+                <div class="left-icons">
+                    <!-- Botón para activar/desactivar modo oscuro -->
+                    <button class="icon-btn" id="dark-mode-btn" aria-label="Modo oscuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <!-- Botón para cambiar tamaño de texto -->
+                    <button class="icon-btn" id="text-size-btn" aria-label="Tamaño de texto">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                </div>
+                
+                <!-- Hora central -->
+                <div class="time" id="current-time">18:22</div>
+                
+                <!-- Iconos a la derecha -->
+                <div class="right-icons">
+                    <!-- Botón para cambiar idioma -->
+                    <button class="icon-btn" id="language-btn" aria-label="Idioma">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <!-- Botón para silenciar/activar sonido -->
+                    <button class="icon-btn" id="sound-btn" aria-label="Sonido">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CONTENEDOR DE RUTA -->
+        <div class="route-container">
+            <h1 class="title">Ruta accesible</h1>
+            <p class="subtitle">Resumen del recorrido y disponibilidad de servicios</p>
+            
+            <!-- MAPA REPRESENTATIVO -->
+            <div class="map-container">
+                <div class="map-route"></div>
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p>Vista previa de la ruta accesible</p>
+                </div>
+            </div>
+            
+            <!-- Botón para confirmar la ruta seleccionada -->
+            <button class="confirm-button" id="confirm-route-btn">
+                <i class="fas fa-check-circle"></i> Confirmar ruta
+            </button>
+            
+            <!-- PREFERENCIAS DE RUTA -->
+            <div class="preferences-section">
+                <h2 class="section-title">Preferencias de ruta</h2>
+                
+                <div class="preference-list">
+                    <!-- Preferencia: Solo ciclovías -->
+                    <div class="preference-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-bicycle"></i>
+                        </div>
+                        <div class="preference-text">
+                            <span class="percentage">65%</span> Solo ciclovías
+                        </div>
+                    </div>
+                    
+                    <!-- Preferencia: Rutas planas -->
+                    <div class="preference-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <div class="preference-text">
+                            Rutas planas o con pocas pendientes
+                        </div>
+                    </div>
+                    
+                    <!-- Preferencia: Evitar avenidas con alto flujo -->
+                    <div class="preference-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <div class="preference-text">
+                            Evitar avenidas con alto flujo vehicular
+                        </div>
+                    </div>
+                    
+                    <!-- Preferencia: Calidad del aire -->
+                    <div class="preference-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="preference-text">
+                            Buena Calidad del aire
+                        </div>
+                    </div>
+                    
+                    <!-- Sub-preferencia: Alumbrado funcionando -->
+                    <div class="preference-item nested-item">
+                        <div class="preference-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="preference-text">
+                            <span class="percentage">78%</span> Alumbrado funcionando
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN FLOTANTE -->
+    <div class="notification" id="notification">
+        Ruta confirmada. Iniciando navegación...
+    </div>
+
+    <script src="script-fin-recorrido.js"></script>
+</body>
+</html>

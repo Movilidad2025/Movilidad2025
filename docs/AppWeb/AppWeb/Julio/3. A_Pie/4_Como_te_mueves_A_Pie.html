@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencias de Movilidad - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="preferences-styles.css">
+</head>
+<body>
+    <!-- Barra superior alineada -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="left-icons">
+                <button class="icon-btn" id="dark-mode-btn"><i class="fas fa-moon"></i></button>
+                <button class="icon-btn" id="text-size-btn"><i class="fas fa-text-height"></i></button>
+            </div>
+            <div class="time">9:41</div>
+            <div class="right-icons">
+                <button class="icon-btn" id="language-btn"><i class="fas fa-globe"></i></button>
+                <button class="icon-btn" id="sound-btn"><i class="fas fa-volume-up"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <div class="preferences-container">
+            <h1 class="title">¿Cómo te mueves normalmente?</h1>
+            <div class="options-container">
+                <div class="option-row">
+                    <div class="option-card" onclick="selectOption(this)">
+                        <div class="option-icon"><i class="fas fa-wheelchair"></i></div>
+                        <div class="option-name">Silla de ruedas</div>
+                    </div>
+                    <div class="option-card" onclick="selectOption(this)">
+                        <div class="option-icon"><i class="fas fa-bicycle"></i></div>
+                        <div class="option-name">Bicicleta</div>
+                    </div>
+                    <div class="option-card" onclick="selectOption(this)">
+                        <div class="option-icon"><i class="fas fa-walking"></i></div>
+                        <div class="option-name">Peatón</div>
+                    </div>
+                </div>
+                <div class="toggle-option">
+                    <div class="toggle-content">
+                        <div class="toggle-title">Alumbrado público</div>
+                        <div class="toggle-desc">Rutas Iluminadas</div>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="lighting-toggle"><span class="slider"></span></label>
+                </div>
+                <div class="toggle-option">
+                    <div class="toggle-content">
+                        <div class="toggle-title">Calidad del aire</div>
+                        <div class="toggle-desc">Alertas y niveles</div>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="air-quality-toggle"><span class="slider"></span></label>
+                </div>
+            </div>
+            <button class="save-button" onclick="savePreferences()">Guardar y continuar</button>
+        </div>
+    </div>
+
+    <script src="preferences-script.js"></script>
+</body>
+</html>

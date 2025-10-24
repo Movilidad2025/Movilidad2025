@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="recuperar-contrasena.css">
+</head>
+<body>
+    <!-- Barra superior con controles de accesibilidad -->
+    <div class="top-bar">
+        <!-- Iconos de la izquierda: modo oscuro y tamaño de texto -->
+        <div class="left">
+            <button class="icon-btn" id="dark-mode-btn">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="icon-btn" id="text-size-btn">
+                <i class="fas fa-text-height"></i>
+            </button>
+        </div>
+        
+        <!-- Reloj en tiempo real -->
+        <div class="time" id="clock">00:00</div>
+        
+        <!-- Iconos de la derecha: idioma y sonido -->
+        <div class="right">
+            <button class="icon-btn" id="language-btn">
+                <i class="fas fa-globe"></i>
+            </button>
+            <button class="icon-btn" id="sound-btn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenedor principal del formulario de recuperación -->
+    <div class="password-container">
+        <h1 class="logo">Accesibilidad</h1>
+        <p class="tagline">Movilidad accesible para todos: en silla de ruedas, en bici o a pie.</p>
+
+        <!-- Contenedor para las opciones de movilidad - ACTUALIZADO -->
+        <div class="options-container">
+            <div class="option-row">
+                <!-- Opción: silla de ruedas -->
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <div class="option-name">Silla de ruedas</div>
+                </div>
+                
+                <!-- Opción: bicicleta -->
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <div class="option-name">Bicicleta</div>
+                </div>
+                
+                <!-- Opción: peatón -->
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <div class="option-name">Peatón</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de instrucciones para recuperar contraseña -->
+        <h2 class="section-title">¿Olvidaste tu contraseña?</h2>
+        <p class="instructions">Introduce tu correo electrónico y te enviaremos un enlace para restablecer tu cuenta.</p>
+
+        <!-- Formulario de recuperación de contraseña -->
+        <form id="recovery-form">
+            <!-- Campo para correo electrónico -->
+            <div class="input-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" placeholder="Correo electrónico">
+            </div>
+            
+            <!-- Botón para enviar solicitud de recuperación -->
+            <button type="submit" class="send-button">Enviar</button>
+            
+            <!-- Enlace para volver al inicio de sesión -->
+            <p class="login-link">¿Recuerdas tu contraseña? <a href="login.html">Inicia sesión</a></p>
+        </form>
+    </div>
+
+    <script src="recuperar-contrasena.js"></script>
+</body>
+</html>

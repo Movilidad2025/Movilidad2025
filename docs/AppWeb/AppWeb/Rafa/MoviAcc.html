@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesibilidad App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Pantalla 1: Login -->
+        <div class="screen active" id="screen1">
+            <h1>Accesibilidad</h1>
+            <p>Movilidad accesible para todos; en silla de ruedas, en bici o a pie.</p>
+            <div class="input-group">
+                <label>Usuario o correo electrónico</label>
+                <input type="text" placeholder="Usuario o correo electrónico">
+            </div>
+            <div class="input-group">
+                <label>Contraseña</label>
+                <input type="password" placeholder="Contraseña">
+            </div>
+            <button class="btn-primary" id="loginBtn">Iniciar sesión</button>
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            <button class="btn-secondary" id="createAccountBtn">Crear cuenta</button>
+            <div class="accessibility-options">
+                <button class="btn-icon">A</button>
+                <button class="btn-icon">O</button>
+                <button class="btn-icon">🔊</button>
+            </div>
+        </div>
+
+        <!-- Pantalla 2: Preferences -->
+        <div class="screen" id="screen2">
+            <a href="#" class="back-btn" id="backBtn">←</a>
+            <h1>¿Cómo te mueves normalmente?</h1>
+            <div class="options-grid">
+                <button class="option-btn">Silla de ruedas</button>
+                <button class="option-btn">Bicicleta</button>
+                <button class="option-btn">Peatón</button>
+            </div>
+            <div class="toggle-group">
+                <label>Alumbrado público</label>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+                <label>Rutas iluminadas</label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <label>Calidad del aire</label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <label>Alertas y niveles</label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <button class="btn-primary" id="saveContinueBtn">Guardar y continuar</button>
+        </div>
+
+        <!-- Pantalla 3: Map -->
+        <div class="screen" id="screen3">
+            <a href="#" class="back-btn" id="backBtnMap">←</a>
+            <h1>Accesibilidad</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="¿A dónde vas?">
+                <button class="btn-icon">🔍</button>
+                <button class="btn-icon">🎙️</button>
+            </div>
+            <div class="map-placeholder">
+                <!-- Placeholder for map -->
+                <div class="map-overlay">Mapa</div>
+            </div>
+            <div class="info-panel">
+                <div class="info-item">
+                    <span>41</span>
+                    <p>Ruta accesible</p>
+                </div>
+                <div class="info-item">
+                    <span>32%</span>
+                    <p>Disponibles</p>
+                </div>
+                <div class="info-item">
+                    <span>Buena</span>
+                    <p>Segura</p>
+                </div>
+                <div class="info-item">
+                    <span>Buena</span>
+                    <p>Calidad del aire</p>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn-icon">📍</button>
+                <button class="btn-icon">🚧</button>
+                <button class="btn-icon">🌫️</button>
+                <button class="btn-icon">ℹ️</button>
+                <button class="btn-icon">≡</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        document.getElementById('loginBtn').onclick = () => showScreen('screen2');
+        document.getElementById('createAccountBtn').onclick = () => showScreen('screen2');
+        document.getElementById('saveContinueBtn').onclick = () => showScreen('screen3');
+        document.getElementById('backBtn').onclick = (e) => {
+            e.preventDefault();
+            showScreen('screen1');
+        };
+        document.getElementById('backBtnMap').onclick = (e) => {
+            e.preventDefault();
+            showScreen('screen2');
+        };
+    </script>
+</body>
+</html>

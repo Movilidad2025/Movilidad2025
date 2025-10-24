@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencias de Movilidad - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles-como-te-mueves.css">
+</head>
+<body>
+    <!-- BARRA SUPERIOR -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <!-- Iconos a la izquierda -->
+            <div class="left-icons">
+                <!-- Botón para activar/desactivar modo oscuro -->
+                <button class="icon-btn" id="dark-mode-btn"><i class="fas fa-moon"></i></button>
+                <!-- Botón para cambiar tamaño de texto -->
+                <button class="icon-btn" id="text-size-btn"><i class="fas fa-text-height"></i></button>
+            </div>
+            
+            <!-- Hora central -->
+            <div class="time">9:41</div>
+            
+            <!-- Iconos a la derecha -->
+            <div class="right-icons">
+                <!-- Botón para cambiar idioma -->
+                <button class="icon-btn" id="language-btn"><i class="fas fa-globe"></i></button>
+                <!-- Botón para silenciar/activar sonido -->
+                <button class="icon-btn" id="sound-btn"><i class="fas fa-volume-up"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+        <div class="preferences-container">
+            <h1 class="title">¿Cómo te mueves normalmente?</h1>
+            
+            <!-- Contenedor de opciones -->
+            <div class="options-container">
+                <!-- Fila de opciones de movilidad -->
+                <div class="option-row">
+                    <!-- Opción: Silla de ruedas -->
+                    <div class="option-card" data-value="wheelchair">
+                        <div class="option-icon"><i class="fas fa-wheelchair"></i></div>
+                        <div class="option-name">Silla de ruedas</div>
+                    </div>
+                    
+                    <!-- Opción: Bicicleta -->
+                    <div class="option-card" data-value="bicycle">
+                        <div class="option-icon"><i class="fas fa-bicycle"></i></div>
+                        <div class="option-name">Bicicleta</div>
+                    </div>
+                    
+                    <!-- Opción: Peatón -->
+                    <div class="option-card" data-value="pedestrian">
+                        <div class="option-icon"><i class="fas fa-walking"></i></div>
+                        <div class="option-name">Peatón</div>
+                    </div>
+                </div>
+                
+                <!-- Opción de toggle: Alumbrado público -->
+                <div class="toggle-option">
+                    <div class="toggle-content">
+                        <div class="toggle-title">Alumbrado público</div>
+                        <div class="toggle-desc">Rutas Iluminadas</div>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="lighting-toggle"><span class="slider"></span></label>
+                </div>
+                
+                <!-- Opción de toggle: Calidad del aire -->
+                <div class="toggle-option">
+                    <div class="toggle-content">
+                        <div class="toggle-title">Calidad del aire</div>
+                        <div class="toggle-desc">Alertas y niveles</div>
+                    </div>
+                    <label class="switch"><input type="checkbox" id="air-quality-toggle"><span class="slider"></span></label>
+                </div>
+            </div>
+            
+            <!-- Botón para guardar preferencias -->
+            <button class="save-button" id="save-preferences-btn">Guardar y continuar</button>
+        </div>
+    </div>
+
+    <script src="script-como-te-mueves.js"></script>
+</body>
+</html>

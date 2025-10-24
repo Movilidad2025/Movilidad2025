@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Configura tu recorrido - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="configurar-recorrido.css">
+</head>
+<body>
+    <div class="center-wrapper">
+        <!-- Barra superior separada -->
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <!-- Iconos a la izquierda -->
+                <div class="left-icons">
+                    <button class="icon-btn" id="dark-mode-btn" aria-label="Modo oscuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="icon-btn" id="text-size-btn" aria-label="Tamaño de texto">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                </div>
+                <!-- Hora central -->
+                <div class="time" id="current-time">10:49</div>
+                <!-- Iconos a la derecha -->
+                <div class="right-icons">
+                    <button class="icon-btn" id="language-btn" aria-label="Idioma">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="icon-btn" id="sound-btn" aria-label="Sonido">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta con contenido principal -->
+        <div class="card">
+            <div class="route-container">
+                <h1 class="title">Configura tu recorrido</h1>
+                <p class="subtitle">Personaliza tu ruta según tus necesidades de accesibilidad</p>
+
+                <!-- Puntos de la ruta -->
+                <div class="route-points">
+                    <!-- Punto de origen -->
+                    <div class="route-item">
+                        <div class="item-icon"><i class="fas fa-circle" style="color:#2ecc71;font-size:12px"></i></div>
+                        <div class="input-container">
+                            <input class="route-input" id="origin" placeholder="¿Desde dónde?" aria-label="Punto de origen">
+                        </div>
+                        <button class="gps-btn" id="origin-gps" aria-label="Usar ubicación actual para origen">
+                            <i class="fas fa-location-dot"></i>
+                        </button>
+                    </div>
+                    <!-- Punto de destino -->
+                    <div class="route-item">
+                        <div class="item-icon"><i class="fas fa-location-dot" style="color:#e74c3c"></i></div>
+                        <div class="input-container">
+                            <input class="route-input" id="destination" placeholder="¿Hacia dónde?" aria-label="Punto de destino">
+                        </div>
+                        <button class="gps-btn" id="destination-gps" aria-label="Usar ubicación actual para destino">
+                            <i class="fas fa-location-dot"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón calcular ruta -->
+                <button class="route-button" id="calculate-route">
+                    <i class="fas fa-route"></i> Calcular ruta
+                </button>
+
+                <div class="divider"></div>
+
+                <!-- Preferencias de accesibilidad -->
+                <div class="preferences-section">
+                    <h2 class="section-title">Preferencias de accesibilidad</h2>
+                    <label class="preference-item">
+                        <input class="checkbox" type="checkbox" id="avoid-stairs" checked>
+                        <span class="item-text">Evitar escaleras</span>
+                    </label>
+                    <label class="preference-item">
+                        <input class="checkbox" type="checkbox" id="elevators" checked>
+                        <span class="item-text">Priorizar elevadores</span>
+                    </label>
+                    <label class="preference-item">
+                        <input class="checkbox" type="checkbox" id="ramps">
+                        <span class="item-text">Priorizar rampas</span>
+                    </label>
+                    <label class="preference-item">
+                        <input class="checkbox" type="checkbox" id="wide-paths">
+                        <span class="item-text">Caminos amplios</span>
+                    </label>
+                </div>
+
+                <!-- Botón guardar preferencias -->
+                <button class="save-button" id="save-preferences">
+                    <i class="fas fa-save"></i> Guardar preferencias
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación flotante -->
+    <div class="notification" id="notification" role="status" aria-live="polite">
+        Preferencias guardadas correctamente
+    </div>
+
+    <script src="configurar-recorrido.js"></script>
+</body>
+</html>
