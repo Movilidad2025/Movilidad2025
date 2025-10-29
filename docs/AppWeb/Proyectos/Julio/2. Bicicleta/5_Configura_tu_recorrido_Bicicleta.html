@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configura tu recorrido - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles-configura-recorrido.css">
+</head>
+<body>
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="center-wrapper">
+        <!-- BARRA SUPERIOR -->
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <!-- Iconos a la izquierda -->
+                <div class="left-icons">
+                    <!-- Botón para activar/desactivar modo oscuro -->
+                    <button class="icon-btn" id="dark-mode-btn" aria-label="Modo oscuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <!-- Botón para cambiar tamaño de texto -->
+                    <button class="icon-btn" id="text-size-btn" aria-label="Tamaño de texto">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                </div>
+                
+                <!-- Hora central -->
+                <div class="time" id="current-time">12:30</div>
+                
+                <!-- Iconos a la derecha -->
+                <div class="right-icons">
+                    <!-- Botón para cambiar idioma -->
+                    <button class="icon-btn" id="language-btn" aria-label="Idioma">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <!-- Botón para silenciar/activar sonido -->
+                    <button class="icon-btn" id="sound-btn" aria-label="Sonido">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CONTENEDOR DE RUTA -->
+        <div class="route-container">
+            <h1 class="title">Configura tu recorrido</h1>
+            <p class="subtitle">Personaliza tu ruta según tus necesidades de accesibilidad</p>
+            
+            <!-- Puntos de la ruta -->
+            <div class="route-points">
+                <!-- Punto de origen -->
+                <div class="route-item">
+                    <div class="item-icon">
+                        <i class="fas fa-circle" style="color: #2ecc71; font-size: 12px;"></i>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="route-input" id="origin" placeholder="¿Desde dónde?" aria-label="Punto de origen">
+                    </div>
+                    <!-- Botón para usar ubicación actual -->
+                    <button class="gps-btn" id="origin-gps-btn" aria-label="Usar ubicación actual">
+                        <i class="fas fa-location-dot"></i>
+                    </button>
+                </div>
+                
+                <!-- Punto de destino -->
+                <div class="route-item">
+                    <div class="item-icon">
+                        <i class="fas fa-location-dot" style="color: #e74c3c;"></i>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="route-input" id="destination" placeholder="¿Hacia dónde?" aria-label="Punto de destino">
+                    </div>
+                    <!-- Botón para usar ubicación actual -->
+                    <button class="gps-btn" id="destination-gps-btn" aria-label="Usar ubicación actual">
+                        <i class="fas fa-location-dot"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Botón para calcular ruta -->
+            <button class="route-button" id="calculate-route">
+                <i class="fas fa-route"></i> Calcular ruta
+            </button>
+            
+            <div class="divider"></div>
+            
+            <!-- Sección de preferencias de accesibilidad -->
+            <div class="preferences-section">
+                <h2 class="section-title">Preferencias de accesibilidad</h2>
+                
+                <!-- Opción: Solo ciclovías -->
+                <label class="preference-item">
+                    <input type="checkbox" class="checkbox" id="bike-lanes" checked>
+                    <span class="item-text">Solo ciclovias</span>
+                </label>
+                
+                <!-- Opción: Rutas planas -->
+                <label class="preference-item">
+                    <input type="checkbox" class="checkbox" id="flat-routes" checked>
+                    <span class="item-text">Rutas planas o con pocas pendientes</span>
+                </label>
+                
+                <!-- Opción: Evitar avenidas con alto flujo -->
+                <label class="preference-item">
+                    <input type="checkbox" class="checkbox" id="avoid-busy-roads">
+                    <span class="item-text">Evitar avenidas con alto flujo vehicular</span>
+                </label>
+                
+                <!-- Opción: Caminos amplios -->
+                <label class="preference-item">
+                    <input type="checkbox" class="checkbox" id="wide-paths">
+                    <span class="item-text">Caminos amplios</span>
+                </label>
+            </div>
+            
+            <!-- Botón para guardar preferencias -->
+            <button class="save-button" id="save-preferences">
+                <i class="fas fa-save"></i> Guardar preferencias
+            </button>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN FLOTANTE -->
+    <div class="notification" id="notification">
+        Preferencias guardadas correctamente
+    </div>
+
+    <script src="script-configura-recorrido.js"></script>
+</body>
+</html>

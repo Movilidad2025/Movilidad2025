@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu cuenta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles-crear-cuenta.css">
+</head>
+<body>
+    <!-- BARRA SUPERIOR - CORREGIDA -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <!-- Iconos a la izquierda -->
+            <div class="left-icons">
+                <button class="icon-btn" id="dark-mode-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="icon-btn" id="text-size-btn">
+                    <i class="fas fa-text-height"></i>
+                </button>
+            </div>
+            
+            <!-- Hora central -->
+            <div class="time">9:41</div>
+            
+            <!-- Iconos a la derecha -->
+            <div class="right-icons">
+                <button class="icon-btn" id="language-btn">
+                    <i class="fas fa-globe"></i>
+                </button>
+                <button class="icon-btn" id="sound-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CONTENEDOR DE REGISTRO -->
+    <div class="register-container">
+        <h1 class="logo">Crea tu cuenta</h1>
+        <p class="tagline">Únete a la comunidad de movilidad accesible.</p>
+        <p class="quote">"Tu camino comienza aquí."</p>
+        
+        <div class="divider"></div>
+        
+        <!-- Formulario de registro -->
+        <form>
+            <!-- Campo para nombre completo -->
+            <div class="input-group">
+                <label for="fullname">Nombre completo</label>
+                <input type="text" id="fullname" placeholder="Nombre completo">
+            </div>
+            
+            <!-- Campo para correo electrónico -->
+            <div class="input-group">
+                <label for="email"><strong>Correo electrónico</strong></label>
+                <input type="email" id="email" placeholder="Correo electrónico">
+                <p class="input-hint">Nombre de usuario</p>
+            </div>
+            
+            <!-- Campo para contraseña -->
+            <div class="input-group">
+                <label for="password"><strong>Contraseña</strong></label>
+                <input type="password" id="password" placeholder="Contraseña">
+            </div>
+            
+            <!-- Campo para confirmar contraseña -->
+            <div class="input-group">
+                <label for="confirm-password"><strong>Confirmar contraseña</strong></label>
+                <input type="password" id="confirm-password" placeholder="Confirmar contraseña">
+            </div>
+            
+            <!-- Botón de registro -->
+            <button type="submit" class="register-button">Registrarme</button>
+            
+            <!-- Enlace para iniciar sesión -->
+            <p class="login-link">¿Ya tienes cuenta? <a href="1. Silla de ruedas_pantalla_inicio.html">Inicia sesión</a></p>
+        </form>
+    </div>
+
+    <script src="script-crear-cuenta.js"></script>
+</body>
+</html>

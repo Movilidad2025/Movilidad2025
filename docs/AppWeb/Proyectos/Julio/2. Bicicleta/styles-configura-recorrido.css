@@ -1,0 +1,372 @@
+/* ================================
+   RESET GENERAL
+   ================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================================
+   ESTILOS GENERALES DEL BODY
+   ================================ */
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    transition: background 0.3s ease;
+}
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+   ================================ */
+.center-wrapper {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ================================
+   BARRA SUPERIOR
+   ================================ */
+.top-bar {
+    background: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.time {
+    font-weight: 600;
+    font-size: 16px;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+.left-icons, .right-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #2c3e50;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    background: #f1f5f9;
+    color: #3498db;
+}
+
+/* ================================
+   CONTENEDOR DE RUTA
+   ================================ */
+.route-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    padding: 35px 30px;
+    text-align: left;
+    transition: background 0.3s ease, font-size 0.3s ease;
+}
+
+.title {
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+/* ================================
+   PUNTOS DE RUTA
+   ================================ */
+.route-points {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.route-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.item-icon {
+    color: #3498db;
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+.input-container {
+    flex: 1;
+    position: relative;
+}
+
+.route-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #2c3e50;
+    padding: 5px 0;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.route-input::placeholder {
+    color: #7f8c8d;
+}
+
+.gps-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gps-btn:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+.gps-btn i {
+    font-size: 16px;
+}
+
+/* ================================
+   BOTONES PRINCIPALES
+   ================================ */
+.route-button, .save-button {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.route-button {
+    margin: 20px 0;
+}
+
+.save-button {
+    margin-top: 20px;
+}
+
+.route-button:hover, .save-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+.route-button:active, .save-button:active {
+    transform: translateY(0);
+}
+
+/* ================================
+   SEPARADOR
+   ================================ */
+.divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ddd, transparent);
+    margin: 25px 0;
+}
+
+/* ================================
+   PREFERENCIAS DE ACCESIBILIDAD
+   ================================ */
+.preferences-section {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.preference-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #3498db;
+    cursor: pointer;
+}
+
+.item-text {
+    color: #2c3e50;
+    font-size: 16px;
+    flex: 1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* ================================
+   NOTIFICACIÓN FLOTANTE
+   ================================ */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2ecc71;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+/* ================================
+   MODO OSCURO
+   ================================ */
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+body.dark-mode .top-bar,
+body.dark-mode .route-container {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark-mode .time,
+body.dark-mode .title,
+body.dark-mode .item-text,
+body.dark-mode .section-title,
+body.dark-mode .route-input {
+    color: #ecf0f1;
+}
+
+body.dark-mode .subtitle {
+    color: #bdc3c7;
+}
+
+body.dark-mode .route-item {
+    background: #34495e;
+    border-color: #2c3e50;
+}
+
+body.dark-mode .icon-btn {
+    color: #ecf0f1;
+}
+
+body.dark-mode .icon-btn:hover {
+    background: #34495e;
+    color: #3498db;
+}
+
+/* ================================
+   MEDIA QUERIES
+   ================================ */
+@media (max-width: 480px) {
+    .route-container {
+        padding: 25px 20px;
+    }
+    
+    .top-bar {
+        padding: 12px 15px;
+    }
+    
+    .icon-btn {
+        font-size: 16px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .time {
+        font-size: 14px;
+    }
+    
+    .left-icons, .right-icons {
+        gap: 10px;
+    }
+    
+    .route-item {
+        padding: 10px 12px;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+    }
+}

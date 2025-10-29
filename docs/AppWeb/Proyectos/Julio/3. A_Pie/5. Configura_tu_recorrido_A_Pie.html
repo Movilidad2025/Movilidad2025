@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configura tu recorrido - Accesibilidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="route-styles.css">
+</head>
+<body>
+    <!-- Contenedor principal con separación entre barra y contenido -->
+    <div class="center-wrapper">
+        <!-- Barra superior separada -->
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <div class="left-icons">
+                    <button class="icon-btn" id="dark-mode-btn" aria-label="Modo oscuro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="icon-btn" id="text-size-btn" aria-label="Tamaño de texto">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                </div>
+                <div class="time" id="current-time">12:30</div>
+                <div class="right-icons">
+                    <button class="icon-btn" id="language-btn" aria-label="Idioma">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="icon-btn" id="sound-btn" aria-label="Sonido">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div class="route-container">
+            <h1 class="title">Configura tu recorrido</h1>
+            <p class="subtitle">Personaliza tu ruta según tus necesidades de accesibilidad</p>
+            
+            <div class="route-points">
+                <div class="route-item">
+                    <div class="item-icon">
+                        <i class="fas fa-circle" style="color: #2ecc71; font-size: 12px;"></i>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="route-input" id="origin" placeholder="¿Desde dónde?" aria-label="Punto de origen">
+                    </div>
+                    <button class="gps-btn" aria-label="Usar ubicación actual">
+                        <i class="fas fa-location-dot"></i>
+                    </button>
+                </div>
+                
+                <div class="route-item">
+                    <div class="item-icon">
+                        <i class="fas fa-location-dot" style="color: #e74c3c;"></i>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="route-input" id="destination" placeholder="¿Hacia dónde?" aria-label="Punto de destino">
+                    </div>
+                    <button class="gps-btn" aria-label="Usar ubicación actual">
+                        <i class="fas fa-location-dot"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <button class="route-button" id="calculate-route">
+                <i class="fas fa-route"></i> Calcular ruta
+            </button>
+            
+            <div class="divider"></div>
+            
+            <div class="preferences-section">
+                <h2 class="section-title">Preferencias de accesibilidad</h2>
+                
+                <label class="preference-item">
+                    <input type="checkbox" class="checkbox" id="avoid-stairs" checked>
+                    <span class="item-text">Cruces peatonales con semáforo</span>
+                </label>
+                
+                <label class="preference-item">
+                    <input type="checkbox" class="checkbox" id="elevators" checked>
+                    <span class="item-text">Evitar zonas con alta contaminación</span>
+                </label>
+                
+                <label class="preference-item">
+                    <input type="checkbox" class="checkbox" id="ramps">
+                    <span class="item-text">Calles bien iluminadas</span>
+                </label>
+                
+                <label class="preference-item">
+                    <input type="checkbox" class="checkbox" id="wide-paths">
+                    <span class="item-text">Evitar aglomeraciones o estaciones de transporte</span>
+                </label>
+            </div>
+            
+            <button class="save-button" id="save-preferences">
+                <i class="fas fa-save"></i> Guardar preferencias
+            </button>
+        </div>
+    </div>
+
+    <!-- Notificación -->
+    <div class="notification" id="notification">
+        Preferencias guardadas correctamente
+    </div>
+
+    <script src="route-script.js"></script>
+</body>
+</html>
