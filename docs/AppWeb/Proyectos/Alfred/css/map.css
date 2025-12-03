@@ -1,0 +1,6 @@
+/* map / route view styles */
+.map-placeholder { height: 240px; border-radius: 12px; background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); display:flex; align-items:center; justify-content:center; margin-bottom: 16px; position: relative; }
+.map-overlay { font-size: 1.1rem; color: rgba(255,255,255,0.7); }
+.menu-buttons { display:flex; gap: 10px; margin-top: 6px; }
+.menu-buttons .menu-btn { flex: 1; padding: 10px; border-radius: 8px; border: none; background: rgba(0,180,216,0.15); color: #bff1fb; cursor:pointer; }
+.menu-buttons .menu-btn:hover { background: rgba(0,180,216,0.25); }

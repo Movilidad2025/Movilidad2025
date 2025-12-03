@@ -1,0 +1,8 @@
+/* styles specific to the login view */
+.input-group { text-align: left; margin-bottom: 12px; }
+.input-group label { display: block; font-size: 0.9em; color: #dbeafe; margin-bottom: 6px; }
+.btn-primary { background: #00b4d8; color: white; border: none; }
+.btn-primary:hover { background: #0096c7; }
+.btn-secondary { margin-top: 12px; display: block; background: transparent; border: 1px solid #00b4d8; color: #00b4d8; }
+.btn-secondary:hover { background: #00b4d8; color: #fff; }
+.forgot-password { display: inline-block; margin-top: 8px; color: #d6f0fb; }

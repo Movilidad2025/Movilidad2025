@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="module" src="../assets/js/common.js"></script>
+<section class="card">
+  <h2>Crear cuenta</h2>
+  <form id="register-form" style="max-width:520px;margin:10px auto">
+    <div class="input-group">
+      <label for="reg-name">Nombre completo</label>
+      <input id="reg-name" type="text" placeholder="Tu nombre" required />
+    </div>
+    <div class="input-group">
+      <label for="reg-email">Correo electrónico</label>
+      <input id="reg-email" type="email" placeholder="correo@ejemplo.com" required />
+    </div>
+    <div class="input-group">
+      <label for="reg-pass">Contraseña</label>
+      <input id="reg-pass" type="password" placeholder="Contraseña" required />
+    </div>
+
+    <div style="margin-top:8px">Elige cómo quieres moverte</div>
+    <div style="display:flex;gap:10px;margin:8px 0">
+      <label><input name="reg-mode" type="radio" value="silla" checked> Silla</label>
+      <label><input name="reg-mode" type="radio" value="bicicleta"> Bicicleta</label>
+      <label><input name="reg-mode" type="radio" value="a_pie"> A pie</label>
+    </div>
+
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+      <button class="save-button" type="submit">Registrar</button>
+    </div>
+  </form>
+
+  <script>
+    // registration handler when page loaded dynamically
+    (function(){
+      const form = document.getElementById('register-form');
+      if(!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('reg-name').value.trim();
+        const email = document.getElementById('reg-email').value.trim().toLowerCase();
+        const pass = document.getElementById('reg-pass').value;
+        const mode = document.querySelector('input[name="reg-mode"]:checked').value;
+
+        // simple storage (no backend) — store under users map
+        const all = JSON.parse(localStorage.getItem('users||demo') || '{}');
+        if(all[email]) { alert('El correo ya está registrado. Por favor inicia sesión.'); return; }
+        all[email] = { name, email, password: pass, selectedMode: null, preferences: null, firstRun: true };
+        localStorage.setItem('users||demo', JSON.stringify(all));
+        // set as current user
+        localStorage.setItem('currentUser||demo', email);
+        // navigate to select_mode page
+        window.location.href = 'select_mode.html';
+      });
+    })();
+  </script>
+</section>

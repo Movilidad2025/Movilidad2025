@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="module" src="../assets/js/common.js"></script>
+<section class="card">
+  <h2>A pie — Flujo</h2>
+  <p>Controles para peatones y recomendaciones.</p>
+
+  <div class="option-row">
+    <div class="option-card"><i class="fas fa-walking fa-2x"></i><div>Preferencias</div></div>
+    <div class="option-card"><i class="fas fa-route fa-2x"></i><div>Configurar recorrido</div></div>
+    <div class="option-card"><i class="fas fa-map-marker-alt fa-2x"></i><div>Terminar</div></div>
+  </div>
+
+  <div class="map-placeholder">(Resumen de ruta — demo)</div>
+  <div style="margin-top:12px;text-align:right"><button class="save-button" id="save-ped">Continuar</button></div>
+
+  <script>
+    (function(){
+      document.getElementById('save-ped').addEventListener('click', ()=>{
+        const users = JSON.parse(localStorage.getItem('users||demo') || '{}');
+        const current = localStorage.getItem('currentUser||demo');
+        if(current && users[current]){
+          users[current].preferences = { pedestrianHints: true };
+          users[current].selectedMode = 'a_pie';
+          users[current].firstRun = false;
+          localStorage.setItem('users||demo', JSON.stringify(users));
+          // navigate directly to map page
+          window.location.href = 'map.html';
+        } else alert('Usuario no autenticado');
+      });
+    })();
+  </script>
+</section>

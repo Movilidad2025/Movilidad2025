@@ -1,0 +1,2 @@
+/* Compatibility wrapper: import shared global styles from css/ */
+@import url('css/global.css');
