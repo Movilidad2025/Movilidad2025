@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Movilidad - App Unificada</title>
+  <link rel="stylesheet" href="assets/css/common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="app-root">
+    <!-- top bar is shared and loaded from partials via JS -->
+    <div id="topbar-target"></div>
+
+    <main class="main-center">
+      <section class="welcome card">
+        <h2>Bienvenido — Inicia sesión</h2>
+        <p>Accede con tu correo y contraseña. Si eres nuevo, crea una cuenta.</p>
+
+        <form id="login-form" aria-label="Inicio de sesión" style="max-width:480px;margin:10px auto">
+          <div class="input-group">
+            <label for="login-email">Correo electrónico</label>
+            <input id="login-email" type="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="input-group">
+            <label for="login-password">Contraseña</label>
+            <input id="login-password" type="password" placeholder="Contraseña" required />
+          </div>
+
+          <!-- If user is first-time they choose a mobility type here (optional) -->
+          <div style="display:flex;gap:8px;justify-content:center;margin:8px 0" id="login-mode-select">
+            <label><input type="radio" name="mode" value="silla" checked> Silla</label>
+            <label><input type="radio" name="mode" value="bicicleta"> Bicicleta</label>
+            <label><input type="radio" name="mode" value="a_pie"> A pie</label>
+          </div>
+
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+            <button class="btn-primary" type="submit">Iniciar sesión</button>
+            <a class="btn-link" href="#register" id="goto-register">Crear cuenta</a>
+          </div>
+        </form>
+      </section>
+
+      <section id="page-root" class="page-root" aria-live="polite">
+        <!-- dynamic page content (loaded from /pages/*.html) -->
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/common.js" type="module"></script>
+  <script src="assets/js/app.js" type="module"></script>
+</body>
+</html>

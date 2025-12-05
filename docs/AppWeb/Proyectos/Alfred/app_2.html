@@ -3,57 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App</title>
-</head>
-<body>
-     <div class="container">
-        <!-- Pantalla 1: Login -->
-        <div class="screen active" id="screen1">
-            <h1>Accesibilidad</h1>
-            <p>Movilidad accesible para todos en silla de ruedas bici o a pie </p>
-            <div class="input-group">
-                <label>Usuario o correo electrónico</label>
-                <input type="text" placeholder="Usuario o correo electrónico">
-            </div>
-            <div class="input-group">
-                <label>Contraseña</label>
-                <input type="password" placeholder="Contraseña">
-            </div>
-             <button class="btn-primary" id="loginBtn">Iniciar sesión</button>
-            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-            <button class="btn-secondary" id="createAccountBtn">Crear cuenta</button>
-            <div class="accessibility-options">
-           
-         </div>
-
-         <!-- Pantalla 2: Preferences -->
-        <div class="screen" id="screen2">
-            <a href="#" class="back-btn" id="backBtn">←</a>
-            <h1>¿Cómo te mueves normalmente?</h1>
-            <div class="options-grid">
-                <button class="option-btn">Silla de ruedas</button>
-                <button class="option-btn">Bicicleta</button>
-                <button class="option-btn">Peatón</button>
-
-         <!-- Pantalla 3: Map -->
-        
+    <link rel="stylesheet" href="ESTILO.CSS">
         <div class="container">
-           <h1>ACCESIBILIDAD</h1>
-           <h2>¿A dónde vas?</h2>
+            <h1>Accesibilidad — Demo</h1>
+            <p>Proyecto demo: vistas separadas para login, preferencias y mapa. Usa los enlaces para abrir cada pantalla.</p>
 
-           </div>
-            <div class="map-placeholder">
-                <!-- Placeholder for map -->
-                <div class="map-overlay">Mapa</div>
-            </div>
-              <div class="menu-buttons">
-      <button class="menu-btn" onclick="alert('Buscando ruta accesible...')">
-         Ruta accesible
-      </button>
-      <button class="menu-btn" onclick="alert('Reportar obstáculo activado')">
-        Reportar obstáculo
-      </button>
-      <button class="menu-btn" onclick="goToCalidad()">
+            <nav style="display:flex;flex-direction:column;gap:10px;margin-top:16px;">
+                <a class="btn-primary" href="views/login.html" style="display:inline-block;text-align:center;text-decoration:none;">Ir a Login</a>
+                <a class="btn-secondary" href="views/preferences.html" style="display:inline-block;text-align:center;text-decoration:none;">Ir a Preferencias</a>
+                <a class="btn-primary" href="views/map.html" style="display:inline-block;text-align:center;text-decoration:none;">Ir a Mapa</a>
+            </nav>
+      
+            <p style="margin-top:16px;font-size:0.9em;color:#dbeafe;">Nota: las hojas de estilo ahora están organizadas en <code>css/</code> y las vistas en <code>views/</code>.</p>
          Ver calidad del aire
       </button>
     </div>

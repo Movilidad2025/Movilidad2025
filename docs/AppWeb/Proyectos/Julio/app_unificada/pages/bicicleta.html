@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="module" src="../assets/js/common.js"></script>
+<section class="card">
+  <h2>Bicicleta — Flujo</h2>
+  <p>Configuraciones y controles pensados para movilidad en bicicleta.</p>
+
+  <div class="option-row">
+    <div class="option-card"><i class="fas fa-map-signs fa-2x"></i><div>Rutas seguras</div></div>
+    <div class="option-card"><i class="fas fa-route fa-2x"></i><div>Configurar recorrido</div></div>
+    <div class="option-card"><i class="fas fa-flag-checkered fa-2x"></i><div>Finalizar</div></div>
+  </div>
+
+  <div class="map-placeholder">(Mapa — demo)</div>
+  <div style="margin-top:12px;text-align:right"><button class="save-button" id="save-bici">Guardar y continuar</button></div>
+
+  <script>
+    (function(){
+      document.getElementById('save-bici').addEventListener('click', ()=>{
+        const users = JSON.parse(localStorage.getItem('users||demo') || '{}');
+        const current = localStorage.getItem('currentUser||demo');
+        if(current && users[current]){
+          users[current].preferences = { bicycleSafety: true };
+          users[current].selectedMode = 'bicicleta';
+          users[current].firstRun = false;
+          localStorage.setItem('users||demo', JSON.stringify(users));
+          // direct navigation to map page
+          window.location.href = 'map.html';
+        } else alert('Usuario no autenticado');
+      });
+    })();
+  </script>
+</section>

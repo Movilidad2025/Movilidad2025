@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="module" src="../assets/js/common.js"></script>
+<section class="card">
+  <h2>Silla de ruedas — Preferencias</h2>
+  <p>Selecciona configuración pensada en accesibilidad.</p>
+
+  <div class="option-row">
+    <div class="option-card" data-value="wheelchair"><i class="fas fa-wheelchair fa-2x"></i><div>Usuario en silla</div></div>
+    <div class="option-card" data-value="bicycle"><i class="fas fa-bicycle fa-2x"></i><div>Bicicleta</div></div>
+    <div class="option-card" data-value="pedestrian"><i class="fas fa-walking fa-2x"></i><div>Peatón</div></div>
+  </div>
+
+  <div class="toggle-option"><div><strong>Alumbrado público</strong><div class="muted">Mejora la seguridad</div></div><label class="switch"><input id="lighting" type="checkbox" checked><span class="slider"></span></label></div>
+  <div class="toggle-option"><div><strong>Calidad del aire</strong><div class="muted">Mostrar avisos</div></div><label class="switch"><input id="air" type="checkbox"><span class="slider"></span></label></div>
+
+  <div style="margin-top:12px;text-align:right"><button class="save-button" id="save-preferences">Guardar y continuar</button></div>
+
+  <script>
+    (function(){
+      document.getElementById('save-preferences').addEventListener('click', ()=>{
+        const lighting = !!document.getElementById('lighting').checked;
+        const air = !!document.getElementById('air').checked;
+        const current = localStorage.getItem('currentUser||demo');
+        const users = JSON.parse(localStorage.getItem('users||demo') || '{}');
+        if(current && users[current]){
+          users[current].preferences = { lighting, air };
+          users[current].selectedMode = 'silla';
+          users[current].firstRun = false;
+          localStorage.setItem('users||demo', JSON.stringify(users));
+          // navigate to dedicated map page
+          window.location.href = 'map.html';
+        } else alert('Usuario no autenticado');
+      });
+    })();
+  </script>
+</section>

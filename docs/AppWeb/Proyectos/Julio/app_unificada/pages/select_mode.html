@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="module" src="../assets/js/common.js"></script>
+<section class="card">
+  <h2>Selecciona tu modo de movilidad</h2>
+  <div class="option-row" style="margin-top:10px">
+    <div class="option-card select-mode" data-mode="silla"><i class="fas fa-wheelchair fa-2x"></i><div>Silla de ruedas</div></div>
+    <div class="option-card select-mode" data-mode="bicicleta"><i class="fas fa-bicycle fa-2x"></i><div>Bicicleta</div></div>
+    <div class="option-card select-mode" data-mode="a_pie"><i class="fas fa-walking fa-2x"></i><div>A pie</div></div>
+  </div>
+
+  <div style="margin-top:12px;text-align:right">
+    <button class="save-button" id="select-mode-next">Siguiente</button>
+  </div>
+
+  <script>
+    (function(){
+      // basic selection UI
+      let selected = null;
+      document.querySelectorAll('.select-mode').forEach(el=>{
+        el.addEventListener('click', ()=>{
+          selected = el.dataset.mode;
+          document.querySelectorAll('.select-mode').forEach(e=>e.style.border = '1px solid #e6edf3');
+          el.style.border = '2px solid var(--accent)';
+        });
+      });
+
+      document.getElementById('select-mode-next').addEventListener('click', ()=>{
+        if(!selected){ alert('Elige un modo primero'); return; }
+        // save selected mode to current user
+        const current = localStorage.getItem('currentUser||demo');
+        const users = JSON.parse(localStorage.getItem('users||demo') || '{}');
+        if(current && users[current]){
+          users[current].selectedMode = selected;
+          users[current].firstRun = true;
+          localStorage.setItem('users||demo', JSON.stringify(users));
+          // go to preferences for that mode (navigate to dedicated page)
+          window.location.href = `${selected}.html`;
+        } else {
+          // not logged in - fallback to login
+          // not logged in - fallback to index
+          window.location.href = '../index.html';
+        }
+      });
+    })();
+  </script>
+</section>

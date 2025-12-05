@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="../assets/css/common.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="module" src="../assets/js/common.js"></script>
+<section class="card">
+  <h2 id="map-title">Mapa</h2>
+  <div id="map-info" style="margin-top:10px">Cargando datos del mapa...</div>
+
+  <div class="map-placeholder" style="height:240px;margin-top:12px">Mapa interactivo (mock)</div>
+
+  <div style="display:flex;gap:10px;justify-content:space-between;margin-top:12px">
+    <div>
+      <button class="btn-icon" id="locate-btn">📍</button>
+      <button class="btn-icon" id="alerts-btn">🔔</button>
+    </div>
+    <div>
+      <button class="btn-primary" id="change-mode">Cambiar modo</button>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      function renderMap(){
+        const current = localStorage.getItem('currentUser||demo');
+        const users = JSON.parse(localStorage.getItem('users||demo') || '{}');
+        const info = document.getElementById('map-info');
+        const title = document.getElementById('map-title');
+        if(!current || !users[current]){ info.textContent = 'Usuario no autenticado.'; return; }
+        const u = users[current];
+        const mode = u.selectedMode || 'silla';
+        title.textContent = `Mapa — ${mode === 'silla' ? 'Silla de ruedas' : mode === 'bicicleta' ? 'Bicicleta' : 'A pie'}`;
+        info.innerHTML = `<div>Modo actual: <strong>${mode}</strong></div><div>Preferencias: <pre style='white-space:pre-wrap'>${JSON.stringify(u.preferences||{}, null, 2)}</pre></div>`;
+      }
+
+      document.getElementById('change-mode').addEventListener('click', ()=>{
+        // allow user to pick a new mode
+        window.location.href = 'select_mode.html';
+      });
+
+      renderMap();
+    })();
+  </script>
+</section>

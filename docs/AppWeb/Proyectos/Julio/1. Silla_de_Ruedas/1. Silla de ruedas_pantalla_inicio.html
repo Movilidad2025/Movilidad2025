@@ -5,34 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accesibilidad App</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- unified shared stylesheet -->
+    <link rel="stylesheet" href="../app_unificada/assets/css/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="center-wrapper">
-        <!-- Barra superior -->
-        <div class="top-bar" role="toolbar" aria-label="Barra superior">
-            <div class="top-bar-content">
-                <div class="left-icons">
-                    <button class="icon-btn" id="dark-mode" aria-label="Modo oscuro" title="Modo oscuro">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="icon-btn" id="text-size" aria-label="Tamaño de letra" title="Tamaño de letra">
-                        <i class="fas fa-text-height"></i>
-                    </button>
-                </div>
-
-                <div class="time" id="clock">00:00</div>
-
-                <div class="right-icons">
-                    <button class="icon-btn" id="lang" aria-label="Idioma" title="Idioma">
-                        <i class="fas fa-globe"></i>
-                    </button>
-                    <button class="icon-btn" id="sound" aria-label="Sonido" title="Sonido">
-                        <i class="fas fa-volume-up"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <!-- Topbar (rendered from shared common.js) -->
+        <div id="topbar-target"></div>
 
         <!-- Pantalla 1: Login -->
         <div class="screen active" id="screen1">
@@ -164,6 +144,7 @@
         </div>
     </div>
 
+    <script type="module" src="../app_unificada/assets/js/common.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
